@@ -11,7 +11,7 @@ const Header: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 src="/logo.svg"
                 alt="Two Good Co. Logo"
-                className="absolute top-0 left-4 w-[100px] h-[100px]"
+                className="absolute top-4 left-4 w-[100px] h-[100px]"
             />
 
 
