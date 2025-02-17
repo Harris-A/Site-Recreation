@@ -1,0 +1,6 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#fff"/>
+    <text x="30%" y="40%" alignment-baseline="middle" text-anchor="middle" font-family="Arial" font-size="24" font-weight="900" fill="#000">TWO</text>
+    <text x="40%" y="60%" alignment-baseline="middle" text-anchor="middle" font-family="Arial" font-size="24" font-weight="900" fill="#000">GOOD</text>
+    <text x="25%" y="80%" alignment-baseline="middle" text-anchor="middle" font-family="Arial" font-size="24" font-weight="900" fill="#000">CO.</text>
+</svg>
