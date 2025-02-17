@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import Typical from 'react-typical';
-import {getStaticInfoIncludingLayouts} from "next/dist/build/entries";
-import Image from "next/image";
 
 const Header: React.FC = () => {
     return (
