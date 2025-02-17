@@ -43,9 +43,6 @@ const Header: React.FC = () => {
 
         </div>
     );
-
-    <Image className="absolute top-0 left-4" src="/Teaser.png" alt="Two Good Co. Logo" />
-
 };
 
 export default Header;
