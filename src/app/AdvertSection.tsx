@@ -9,23 +9,23 @@ const products = [
         src: "/1.png",
         alt: "Gifts for Good",
         label: "GIFTS FOR GOOD", // Text on the floating button
-        bgColor: "bg-yellow-200", // Tailwind class for bg colour on button
+        bgColor: "bg-yellow-200 dark:bg-yellow-600 dark:text-white", // Tailwind class for bg colour on button
     },
     {
         src: "/2.png",
         alt: "Alémais Collection",
         label: "ALÉMAIS", // Text on the floating button
-        bgColor: "bg-blue-300",
+        bgColor: "bg-blue-300 dark:bg-blue-600 dark:text-white",
     },
     {
         src: "/3.png",
         alt: "Soaps for Hope",
         label: "SOAPS FOR HOPE", // Text on the floating button
-        bgColor: "bg-gray-200",
+        bgColor: "bg-gray-200 dark:bg-gray-600 dark:text-white",
     },
 ];
 
-const ProductGrid: React.FC = () => {
+const ProductGrid = () => {
     return (
         // Grid container: Responsive layout using Tailwind's grid system
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 sm:px-8 md:px-16">
