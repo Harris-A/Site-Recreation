@@ -22,12 +22,12 @@ body {
 
 /* Testimonial slider pagination dots */
 .swiper-pagination-bullet {
-  background: #000 !important; /* Material Design primary color */
+  background: #000 !important;
   width: 20px !important;
   height: 20px !important;
   transition: opacity 0.3s;
 }
-.swiper-pagination-bullet {
+.dark .swiper-pagination-bullet {
   background: #fff !important;
 }
 /* -- Testimonial mouse scroller CSS --*/

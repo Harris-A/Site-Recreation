@@ -5,7 +5,7 @@ import Typical from 'react-typical';
 import Lenis from 'lenis';
 
 export default function Header() {
-    const [lenisRef, setLens] = useState(null);
+    /*const [lenisRef, setLens] = useState(null);
     const [rafState, setRaf] = useState(null);
 
     useEffect(() => {
@@ -28,7 +28,7 @@ export default function Header() {
                 scroller.destroy();
             }
         };
-    }, []);
+    }, []);*/
 
     return (
         <div className="mt-12">
