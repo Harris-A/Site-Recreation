@@ -50,7 +50,7 @@ const ProductGrid = () => {
                     <Image
                         src={product.src}
                         alt={product.alt}
-                        width={500}
+                        width={400}
                         height={700}
                         className="w-full h-auto object-cover transform group-hover:scale-105 transition-all duration-500 ease-in-out"
                     />
