@@ -21,7 +21,7 @@ export default function Testimonials() {
     useEffect(() => {
         const scroller = new Lenis({
             smoothWheel: true,
-            smoothTouch: false, // Adjust for mobile behavior
+            smoothTouch: true, // Adjust for mobile behavior
         });
 
         function raf(time: number) {
@@ -103,32 +103,33 @@ export default function Testimonials() {
                             transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
                             className="text-center"
                         >
-                            <h2 className="text-6xl md:text-4xl font-semibold text-gray-900 dark:text-white uppercase flex items-center justify-center">
+                            <h2 className="md:text-4xl font-semibold text-gray-900 dark:text-white uppercase flex items-center justify-center">
                                 "{testimonial.text}"
                             </h2>
                             <h3 className="text-center font-bold text-gray-400 mt-3">
                                 - {testimonial.author}
                             </h3>
                         </motion.div>
+
+                        {/* Mouse Scroller Animation */}
+                        <motion.div
+                            className="scroll-downs mt-4"
+                            /*initial={{ opacity: 0, y: 20 }}*/
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
+                        >
+                            <div className="mousey border-2 border-gray-700 dark:border-white w-6 h-10 flex items-center justify-center rounded-full">
+                                <motion.div
+                                    className="scroller w-2 h-2 bg-gray-700 dark:bg-white rounded-full"
+                                    animate={{ y: [0, 5, 0] }}
+                                    transition={{ duration: 1.5, repeat: Infinity }}
+                                />
+                            </div>
+                        </motion.div>
+
                     </SwiperSlide>
                 ))}
             </Swiper>
-
-            {/* Mouse Scroller Animation */}
-            <motion.div
-                className="scroll-downs mt-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-            >
-                <div className="mousey border-2 border-gray-700 dark:border-white w-6 h-10 flex items-center justify-center rounded-full">
-                    <motion.div
-                        className="scroller w-2 h-2 bg-gray-700 dark:bg-white rounded-full"
-                        animate={{ y: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                    />
-                </div>
-            </motion.div>
         </div>
     );
 }
