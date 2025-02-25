@@ -54,16 +54,17 @@ body {
   height: 10px;
   border-radius: 25%;
   background-color: #000;
-  animation-name: scroll;
+  /*animation-name: scroll;
   animation-duration: 2.2s;
   animation-timing-function: cubic-bezier(.15,.41,.69,.94);
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite;*/
 }
 .dark .scroller {
   background-color: #fff;
 }
+/*
 @keyframes scroll {
   0% { opacity: 0; }
   10% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(15px); opacity: 0;}
-}
+}*/
