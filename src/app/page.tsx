@@ -18,31 +18,6 @@ export default function Home() {
         document.documentElement.classList.toggle("dark", theme === "dark");
     }, [theme]);
 
-    const [lenisRef, setLens] = useState(null);
-    const [rafState, setRaf] = useState(null);
-
-    useEffect(() => {
-        const scroller = new Lenis();
-
-        function raf(time: number) {
-            scroller.raf(time);
-            requestAnimationFrame(raf);
-        }
-
-        const rafId = requestAnimationFrame(raf);
-        // @ts-ignore
-        setRaf(rafId);
-        // @ts-ignore
-        setLens(scroller);
-
-        return () => {
-            if (scroller) {
-                cancelAnimationFrame(rafId);
-                scroller.destroy();
-            }
-        };
-    }, []);
-
     return (
         <>
             <div
