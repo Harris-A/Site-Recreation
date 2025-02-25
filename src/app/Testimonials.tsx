@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion"; // Import Framer Motion
+import Lenis from 'lenis';
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,26 +11,49 @@ import "swiper/css/pagination";
 import "swiper/css/mousewheel";
 import "./globals.css";
 
-// Import required modules
+// Import required swiper modules
 import { Pagination, Mousewheel } from "swiper/modules";
 
 export default function Testimonials() {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const [lenis, setLenis] = useState<Lenis | null>(null);
+    const testimonialRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
+        const scroller = new Lenis({
+            smoothWheel: true,
+            smoothTouch: false, // Adjust for mobile behavior
+        });
 
-        const preventScroll = (e: WheelEvent) => {
-            e.preventDefault();
-        };
+        function raf(time: number) {
+            scroller.raf(time);
+            requestAnimationFrame(raf);
+        }
 
-        container.addEventListener("wheel", preventScroll, { passive: false });
+        const rafId = requestAnimationFrame(raf);
+        setLenis(scroller);
 
         return () => {
-            container.removeEventListener("wheel", preventScroll);
+            cancelAnimationFrame(rafId);
+            scroller.destroy();
         };
     }, []);
+
+    // **Pause Lenis when hovering over Swiper**
+    useEffect(() => {
+        const swiperContainer = testimonialRef.current;
+        if (!swiperContainer || !lenis) return;
+
+        const handleMouseEnter = () => lenis.stop();
+        const handleMouseLeave = () => lenis.start();
+
+        swiperContainer.addEventListener('mouseenter', handleMouseEnter);
+        swiperContainer.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+            swiperContainer.removeEventListener('mouseenter', handleMouseEnter);
+            swiperContainer.removeEventListener('mouseleave', handleMouseLeave);
+        };
+    }, [lenis]);
 
     const testimonials = [
         {
@@ -50,7 +74,7 @@ export default function Testimonials() {
     ];
 
     return (
-        <div className="testimonial-container mt-6 flex flex-col items-center justify-center">
+        <div ref={testimonialRef} className="testimonial-container mt-6 flex flex-col items-center justify-center">
             <motion.h1
                 className="text-gray-900 uppercase dark:text-white text-lg md:text-lg border-b-2 border-black dark:border-white mb-6 pb-2"
                 initial={{ opacity: 0, y: -20 }}
