@@ -2,34 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Typical from 'react-typical';
-import Lenis from 'lenis';
 
 export default function Header() {
-    /*const [lenisRef, setLens] = useState(null);
-    const [rafState, setRaf] = useState(null);
-
-    useEffect(() => {
-        const scroller = new Lenis();
-
-        function raf(time: number) {
-            scroller.raf(time);
-            requestAnimationFrame(raf);
-        }
-
-        const rafId = requestAnimationFrame(raf);
-        // @ts-ignore
-        setRaf(rafId);
-        // @ts-ignore
-        setLens(scroller);
-
-        return () => {
-            if (scroller) {
-                cancelAnimationFrame(rafId);
-                scroller.destroy();
-            }
-        };
-    }, []);*/
-
     return (
         <div className="mt-12">
             {/* Animated Logo */}
