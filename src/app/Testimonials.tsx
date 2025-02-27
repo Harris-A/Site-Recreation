@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import Lenis from 'lenis';
@@ -12,13 +12,14 @@ import "swiper/css/mousewheel";
 import "./globals.css";
 
 // Import required swiper modules
-import { Pagination, Mousewheel } from "swiper/modules";
+import {Pagination, Mousewheel, Autoplay} from "swiper/modules";
 
 export default function Testimonials() {
     const [lenis, setLenis] = useState<Lenis | null>(null);
     const testimonialRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        console.log('effect')
         const scroller = new Lenis({
             smoothWheel: true,
             smoothTouch: true, // Adjust for mobile behavior
@@ -74,9 +75,9 @@ export default function Testimonials() {
     ];
 
     return (
-        <div ref={testimonialRef} className="testimonial-container mt-6 flex flex-col items-center justify-center">
+        <div ref={testimonialRef} className="testimonial-container mt-16 flex flex-col items-center justify-center">
             <motion.h1
-                className="text-gray-900 uppercase dark:text-white text-lg md:text-lg border-b-2 border-black dark:border-white mb-6 pb-2"
+                className="text-gray-900 uppercase dark:text-white text-lg md:text-2xl border-b-2 border-black dark:border-white mt-16 mb-6 pb-2"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -88,10 +89,15 @@ export default function Testimonials() {
                 direction="vertical"
                 slidesPerView={"auto"}
                 spaceBetween={30}
+                loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false
+                }}
                 mousewheel={{ forceToAxis: true, releaseOnEdges: false }}
                 pagination={{ clickable: false }}
-                modules={[Pagination, Mousewheel]}
-                className="mySwiper flex items-center justify-center md:w-3/6 h-[40vh] md:h-[40vh] bg-white dark:bg-black overflow-hidden"
+                modules={[Pagination, Mousewheel, Autoplay]}
+                className="mySwiper flex items-center justify-center md:w-3/6 h-[40vh] md:h-[20vh] bg-white dark:bg-black overflow-hidden"
                 onWheel={(e) => e.stopPropagation()} // Stops page scroll
             >
                 {testimonials.map((testimonial, index) => (
@@ -109,22 +115,6 @@ export default function Testimonials() {
                             <h3 className="text-center font-bold text-gray-400 mt-3">
                                 - {testimonial.author}
                             </h3>
-                        </motion.div>
-
-                        {/* Mouse Scroller Animation */}
-                        <motion.div
-                            className="scroll-downs mt-4"
-                            /*initial={{ opacity: 0, y: 20 }}*/
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-                        >
-                            <div className="mousey border-2 border-gray-700 dark:border-white w-6 h-10 flex items-center justify-center rounded-full">
-                                <motion.div
-                                    className="scroller w-2 h-2 bg-gray-700 dark:bg-white rounded-full"
-                                    animate={{ y: [0, 5, 0] }}
-                                    transition={{ duration: 1.5, repeat: Infinity }}
-                                />
-                            </div>
                         </motion.div>
 
                     </SwiperSlide>
