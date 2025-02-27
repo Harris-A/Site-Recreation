@@ -1,5 +1,5 @@
 {
-  "name": "apple-vision-recreation",
+  "name": "site recreation with nextjs and reactjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/themes": "^3.2.1",
     "autoprefixer": "^10.4.20",
     "framer-motion": "^12.4.7",
     "lenis": "^1.1.20",
