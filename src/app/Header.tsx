@@ -12,7 +12,7 @@ export default function Header() {
                 transition={{ duration: 0.8 }}
                 src="/logo.svg"
                 alt="Two Good Co. Logo"
-                className=" w-[100px] h-[100px]"
+                className="absolute top-4 left-4 w-[100px] h-[100px]"
             />
 
             {/* Animated Heading */}
