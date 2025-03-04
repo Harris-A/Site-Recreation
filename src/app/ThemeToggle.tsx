@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { Button } from "@radix-ui/themes";
+import { Button, Tooltip } from "@radix-ui/themes";
 
 export default function ThemeToggle() {
     const [mounted, setMounted] = useState(false);
@@ -22,13 +22,15 @@ export default function ThemeToggle() {
     };
 
     return (
-        <Button
-            className="relative p-2 rounded-lg"
-            onClick={toggleTheme}
-            variant="soft"
-        >
-            <SunIcon className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-        </Button>
+        <Tooltip content="Toggle theme Dark/Light mode">
+            <Button
+                className="relative p-2 rounded-lg"
+                onClick={toggleTheme}
+                variant="soft"
+            >
+                <SunIcon className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            </Button>
+        </Tooltip>
     );
 }
