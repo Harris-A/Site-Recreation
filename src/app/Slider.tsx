@@ -1,10 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import { Button } from "@radix-ui/themes";
+import { Button, Text} from "@radix-ui/themes";
 
 //import swiper default css
 import 'swiper/css';
 import 'swiper/css/pagination';
+import '@radix-ui/colors';
 
 //import project globals css
 import './globals.css';
@@ -16,15 +17,15 @@ import {motion} from "framer-motion";
 export default function Slider () {
     return (
         <>
-                <motion.h1
-                    className="text-gray-900 uppercase dark:text-white text-lg md:text-2xl border-b-2 border-black dark:border-white mb-6 pb-2"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                SHOP
-                </motion.h1>
-
+            <div className="slider-container flex flex-col items-center justify-center">
+            <motion.h1
+                className="uppercase text-lg md:text-2xl border-b-2 mb-3 w-full font-bold dark:font-medium"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            > SHOP
+            </motion.h1>
+            </div>
             <Swiper
                 slidesPerView={"auto"}
                 loop={true}
@@ -42,37 +43,45 @@ export default function Slider () {
                 }}
                 spaceBetween={350}
                 modules={[Autoplay]}
-                className="image-slider"
+                className="image-slider mt-16"
                 >
                 <SwiperSlide className="swiper-slide">
-                    <Image src="/slider-img-1.png" alt="slider1" width="500" height="500" className="object-cover dark:bg-white"/>
+                    <Image src="/slider-img-1.png" alt="slider1" width="1000" height="1000" className="object-cover dark:bg-white"/>
                     <div className="flex justify-center items-center gap-3">
-                        <h3 className="price dark:text-white ">£50.00</h3>
-                        <Button variant="solid">Buy Now</Button>
+                        <Text as="p" mt="3" size="5" weight="bold" color="gray">
+                            £50.00
+                        </Text>
+                        <Button variant="solid" mt="3">View Product</Button>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide className="swiper-slide">
-                    <Image src="/slider-img-2.png" alt="slider2" width="500" height="500" className="object-cover dark:bg-white" />
+                    <Image src="/slider-img-2.png" alt="slider2" width="1000" height="1000" className="object-cover dark:bg-white" />
                     <div className="flex justify-center items-center gap-3">
-                        <h3 className="price dark:text-white">£190.00</h3>
-                        <Button variant="solid">Buy Now</Button>
+                        <Text as="p" mt="3" size="5" weight="bold" color="gray">
+                            £190.00
+                        </Text>
+                        <Button variant="solid" mt="3">View Product</Button>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide className="swiper-slide">
-                        <Image src="/slider-img-3.png" alt="slider3" width="500" height="500" className="object-cover dark:bg-white"/>
+                        <Image src="/slider-img-3.png" alt="slider3" width="1000" height="1000" className="object-cover dark:bg-white"/>
                         <div className="flex justify-center items-center gap-3">
-                            <h3 className="price dark:text-white">£45.00</h3>
-                            <Button variant="solid">Buy Now</Button>
+                            <Text as="p" mt="3" size="5" weight="bold" color="gray">
+                                £45.00
+                            </Text>
+                            <Button variant="solid" mt="3">View Product</Button>
                         </div>
                 </SwiperSlide>
 
                 <SwiperSlide className="swiper-slide">
-                    <Image src="/slider-img-4.png" alt="slider4" width="500" height="500" className="object-cover dark:bg-white"/>
+                    <Image src="/slider-img-4.png" alt="slider4" width="1000" height="1000" className="object-cover dark:bg-white"/>
                     <div className="flex justify-center items-center gap-3">
-                        <h3 className="price dark:text-white">£59.00</h3>
-                        <Button variant="solid">Buy Now</Button>
+                        <Text as="p" mt="3" size="5" weight="bold" color="gray">
+                            £55.00
+                        </Text>
+                        <Button variant="solid" mt="3">View Product</Button>
                     </div>
                 </SwiperSlide>
 

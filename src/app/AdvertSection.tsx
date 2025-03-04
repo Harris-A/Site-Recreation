@@ -9,19 +9,19 @@ const products = [
         src: "/1.png",
         alt: "Gifts for Good",
         label: "GIFTS FOR GOOD",
-        bgColor: "bg-yellow-200 dark:bg-yellow-600 dark:text-white",
+        bgColor: "bg-yellow-200",
     },
     {
         src: "/2.png",
         alt: "Alémais Collection",
         label: "ALÉMAIS",
-        bgColor: "bg-blue-300 dark:bg-blue-600 dark:text-white",
+        bgColor: "bg-blue-300",
     },
     {
         src: "/3.png",
         alt: "Soaps for Hope",
         label: "SOAPS FOR HOPE",
-        bgColor: "bg-gray-200 dark:bg-gray-600 dark:text-white",
+        bgColor: "bg-gray-200",
     },
 ];
 
@@ -36,7 +36,7 @@ const ProductGrid = () => {
     const yTransform = useTransform(scrollYProgress, [0, 1], [-50, 50]); // Move up/down
 
     return (
-        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 sm:px-8 md:px-16">
+        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-3 px-4 sm:px-8 md:px-16">
             {products.map((product, index) => (
                 <motion.div
                     key={index}
@@ -52,7 +52,7 @@ const ProductGrid = () => {
                         alt={product.alt}
                         width={400}
                         height={700}
-                        className="w-full h-auto object-cover transform group-hover:scale-105 transition-all duration-500 ease-in-out"
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-500 ease-in-out"
                     />
 
                     <motion.div

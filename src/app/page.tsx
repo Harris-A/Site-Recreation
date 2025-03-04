@@ -2,53 +2,21 @@
 
 'use client'
 
-import { useState, useEffect } from "react";
 import Header from "./Header";
-//import Image from "next/image";
 import HeaderImage from "@/app/HeaderImage";
 import AdvertSection from "@/app/AdvertSection";
 import Footer from "@/app/Footer";
 import Testimonials from "@/app/Testimonials";
-import AnimatedCursor from "react-animated-cursor"
+//import AnimatedCursor from "react-animated-cursor"
 import Slider from "@/app/Slider";
 
 export default function Home() {
-    const [theme, setTheme] = useState("light");
-
-    useEffect(() => {
-        document.documentElement.classList.toggle("dark", theme === "dark");
-    }, [theme]);
-
     return (
-        <>
-            <div className="App">
-                {/*<AnimatedCursor
-                    innerSize={8}
-                    outerSize={35}
-                    innerScale={1}
-                    outerScale={2}
-                    outerAlpha={0}
-                    hasBlendMode={true}
-                    innerStyle={{
-                        backgroundColor: '#e7e7e7'
-                    }}
-                    outerStyle={{
-                        border: '3px solid #e7e7e7'
-                    }}
-                />*/}
-            </div>
                 <div
-                    className="hero-section min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 px-4 sm:px-8 md:px-16">
-                    {/* Theme Toggle Button */}
-                    <button
-                        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                        className="flex px-4 py-2 bg-gray-200 dark:bg-white dark:text-black rounded"
-                    >
-                        Toggle {theme === "light" ? "Dark" : "Light"} Mode
-                    </button>
+                    className="hero-section min-h-screen bg-white dark:bg-[#191919] text-black dark:text-[#f6fef4b0] transition-colors duration-300 px-4 sm:px-8 md:px-16">
 
                     {/* First Section with Header */}
-                    <div className="mt-16 flex">
+                    <div className="flex">
                         <Header />
                     </div>
 
@@ -66,7 +34,7 @@ export default function Home() {
                         <Testimonials />
                     </div>
 
-                    <div className="slider mt-16">
+                    <div className="slider">
                         <Slider />
                     </div>
 
@@ -75,6 +43,5 @@ export default function Home() {
                     </div>
 
                 </div>
-        </>
     );
 }

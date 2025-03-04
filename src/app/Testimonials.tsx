@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import Lenis from 'lenis';
+import {Heading, HeadingProps} from "@radix-ui/themes";
 
 // Import Swiper styles
 import "swiper/css";
@@ -75,9 +76,11 @@ export default function Testimonials() {
     ];
 
     return (
+
+
         <div ref={testimonialRef} className="testimonial-container mt-16 flex flex-col items-center justify-center">
             <motion.h1
-                className="text-gray-900 uppercase dark:text-white text-lg md:text-2xl border-b-2 border-black dark:border-white mt-16 mb-6 pb-2"
+                className="uppercase text-lg md:text-2xl border-b-2 mt-16 mb-3 w-full font-bold dark:font-medium"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -95,9 +98,9 @@ export default function Testimonials() {
                     disableOnInteraction: false
                 }}
                 mousewheel={{ forceToAxis: true, releaseOnEdges: false }}
-                pagination={{ clickable: false }}
+                pagination={{ clickable: false}}
                 modules={[Pagination, Mousewheel, Autoplay]}
-                className="mySwiper flex items-center justify-center md:w-3/6 h-[40vh] md:h-[20vh] bg-white dark:bg-black overflow-hidden"
+                className="mySwiper md:w-3/6 h-[25vh] md:h-[25vh] overflow-hidden"
                 onWheel={(e) => e.stopPropagation()} // Stops page scroll
             >
                 {testimonials.map((testimonial, index) => (
@@ -109,12 +112,12 @@ export default function Testimonials() {
                             transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
                             className="text-center"
                         >
-                            <h2 className="md:text-4xl font-semibold text-gray-900 dark:text-white uppercase flex items-center justify-center">
+                            <Heading color="gray" weight="medium" size="8">
                                 "{testimonial.text}"
-                            </h2>
-                            <h3 className="text-center font-bold text-gray-400 mt-3">
+                            </Heading>
+                            <Heading mt="3" color="lime" weight="bold" size="4">
                                 - {testimonial.author}
-                            </h3>
+                            </Heading>
                         </motion.div>
 
                     </SwiperSlide>

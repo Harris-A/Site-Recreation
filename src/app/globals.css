@@ -3,32 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #FFFFFF;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme='dark-theme'] {
+  --background: #171717;
+  --foreground: #FFFFFF;
+}
+
+/*@media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+}*/
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
 }
-
 /* react swiper pagination styles */
-.swiper-pagination-bullet {
-  background: #000 !important;
+.dark .swiper-pagination-bullet {
+  background: #f6fef4b0 !important;
   width: 14px !important;
   height: 14px !important;
   transition: opacity 0.3s;
 }
-.dark .swiper-pagination-bullet {
-  background: #fff !important;
+.swiper-pagination-bullet {
+  background: #bdee63 !important;
+  width: 14px !important;
+  height: 14px !important;
+  transition: opacity 0.3s;
 }
 /* -- Testimonial mouse scroller CSS --*/
 .scroll-downs {
@@ -46,9 +53,9 @@ body {
   opacity: 0.75;
   box-sizing: content-box;
 }
-.dark .mousey {
+/*.dark .mousey {
   border: 3px solid #fff;
-}
+}*/
 .scroller {
   width: 3px;
   height: 10px;
@@ -59,9 +66,9 @@ body {
   animation-timing-function: cubic-bezier(.15,.41,.69,.94);
   animation-iteration-count: infinite;*/
 }
-.dark .scroller {
+/*.dark .scroller {
   background-color: #fff;
-}
+}*/
 /*
 @keyframes scroll {
   0% { opacity: 0; }

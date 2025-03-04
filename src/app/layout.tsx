@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
-import {Theme, ThemePanel} from "@radix-ui/themes";
+import {Theme} from "@radix-ui/themes";
+import { ThemeProvider } from 'next-themes'
+import ThemeToggle from "@/app/ThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,13 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Theme accentColor="lime" grayColor="olive" radius="large" scaling="95%">
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+        >
+          <Theme accentColor="lime" grayColor="olive" radius="full" scaling="90%">
             {children}
-        </Theme>
+          <div className="absolute top-4 right-4">
+            <ThemeToggle />
+          </div>
+          </Theme>
+        </ThemeProvider>
+
       </body>
     </html>
   );

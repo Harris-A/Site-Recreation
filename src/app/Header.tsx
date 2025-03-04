@@ -4,7 +4,7 @@ import Typical from 'react-typical';
 
 export default function Header() {
     return (
-        <div className="mt-12">
+        <div>
             {/* Animated Logo */}
             <motion.img
                 initial={{ opacity: 0, y: -20 }}
@@ -12,7 +12,7 @@ export default function Header() {
                 transition={{ duration: 0.8 }}
                 src="/logo.svg"
                 alt="Two Good Co. Logo"
-                className="absolute top-4 left-4 w-[100px] h-[100px]"
+                className=" w-[100px] h-[100px]"
             />
 
             {/* Animated Heading */}
@@ -20,7 +20,7 @@ export default function Header() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="mt-[50px] uppercase xs:text-[10rem] sm:text-[8rem] md:text-[4rem] lg:text-[6rem] xl:text-[6rem] 2xl:text-[10rem] text-gray-bold dark:text-white font-bold tracking-[-0.03em] leading-none"
+                className="mt-[50px] uppercase xs:text-[10rem] sm:text-[8rem] md:text-[4rem] lg:text-[6rem] xl:text-[6rem] 2xl:text-[10rem] text-gray-bold font-bold tracking-[-0.03em] leading-none"
             >
                 <Typical
                     steps={[
