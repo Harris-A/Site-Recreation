@@ -1,3 +1,5 @@
+'use client'
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { Button, Text} from "@radix-ui/themes";
@@ -19,7 +21,7 @@ export default function Slider () {
         <>
             <div className="slider-container flex flex-col items-center justify-center">
             <motion.h1
-                className="uppercase text-lg md:text-2xl border-b-2 mb-3 w-full font-bold dark:font-medium"
+                className="uppercase text-lg md:text-2xl border-b-2 border-b-lime-700 mb-3 font-bold"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -51,7 +53,7 @@ export default function Slider () {
                         <Text as="p" mt="3" size="5" weight="bold" color="gray">
                             £50.00
                         </Text>
-                        <Button variant="solid" mt="3">View Product</Button>
+                        <Button variant="soft" mt="3" size="4" highContrast>View Product</Button>
                     </div>
                 </SwiperSlide>
 
@@ -61,7 +63,7 @@ export default function Slider () {
                         <Text as="p" mt="3" size="5" weight="bold" color="gray">
                             £190.00
                         </Text>
-                        <Button variant="solid" mt="3">View Product</Button>
+                        <Button variant="soft" mt="3" size="4" highContrast>View Product</Button>
                     </div>
                 </SwiperSlide>
 
@@ -71,7 +73,7 @@ export default function Slider () {
                             <Text as="p" mt="3" size="5" weight="bold" color="gray">
                                 £45.00
                             </Text>
-                            <Button variant="solid" mt="3">View Product</Button>
+                            <Button variant="soft" mt="3" size="4" highContrast>View Product</Button>
                         </div>
                 </SwiperSlide>
 
@@ -81,7 +83,7 @@ export default function Slider () {
                         <Text as="p" mt="3" size="5" weight="bold" color="gray">
                             £55.00
                         </Text>
-                        <Button variant="solid" mt="3">View Product</Button>
+                        <Button variant="soft" mt="3" size="4" highContrast>View Product</Button>
                     </div>
                 </SwiperSlide>
 
