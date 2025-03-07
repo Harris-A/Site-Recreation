@@ -10,9 +10,9 @@ export default function Header() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                src="/logo.svg"
+                src="/logo-new.svg"
                 alt="Two Good Co. Logo"
-                className="absolute top-4 left-4 w-[100px] h-[100px]"
+                className="absolute top-4 left-4 w-[100px] h-[100px] dark:bg-white"
             />
 
             {/* Animated Heading */}
