@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 const HeaderImage = () => {
     return (
             <div
-                className="w-full h-[80vh] bg-fixed bg-center bg-cover"
+                className="w-full h-[80vh] md:bg-fixed bg-center bg-cover"
                 style={{
-                    backgroundImage: "url('/Teaser.png')", // Replace with actual path
+                    backgroundImage: "url('/header-image.png')", // Replace with actual path
                 }}
             >
             </div>
