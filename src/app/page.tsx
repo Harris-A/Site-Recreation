@@ -5,8 +5,8 @@ import AdvertSection from "@/app/AdvertSection";
 import Footer from "@/app/Footer";
 import Testimonials from "@/app/Testimonials";
 import Callout from "@/app/callout";
-//import AnimatedCursor from "react-animated-cursor"
 import Slider from "@/app/Slider";
+import Nav from "@/app/Nav";
 
 export default function Home() {
     return (
@@ -16,17 +16,18 @@ export default function Home() {
                 <Callout />
             </div>
 
-            {/* First Section with Header */}
+            <div className="flex justify-center">
+                <Nav />
+            </div>
+
             <div className="flex dark:text-[#f6fef4b0]">
                 <Header />
             </div>
 
-            {/* Second Section with Header Image */}
             <div className="mt-16 flex flex-col items-center">
                 <HeaderImage />
             </div>
 
-            {/* Third Section with Advert Images */}
             <div className="mt-16 flex flex-col items-center">
                 <AdvertSection />
             </div>
