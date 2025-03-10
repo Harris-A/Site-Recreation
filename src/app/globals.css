@@ -6,6 +6,10 @@
   --background: #FFFFFF;
   --foreground: #171717;
 }
+/*:root[data-theme="dark"] {
+  --color-background: #121212 !important;
+  --color-text: #ffffff !important;
+}*/
 
 [data-theme='dark-theme'] {
   --background: #171717;
