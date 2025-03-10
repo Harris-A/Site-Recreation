@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import Lenis from 'lenis';
-import {Heading, HeadingProps} from "@radix-ui/themes";
+import {Heading, Quote, Text} from "@radix-ui/themes";
 
 // Import Swiper styles
 import "swiper/css";
@@ -40,7 +40,7 @@ export default function Testimonials() {
         };
     }, []);
 
-    // **Pause Lenis when hovering over Swiper**
+    // **Pause Lenis when hovering over Testimonial Swiper**
     useEffect(() => {
         const swiperContainer = testimonialRef.current;
         if (!swiperContainer || !lenis) return;
@@ -80,12 +80,12 @@ export default function Testimonials() {
 
         <div ref={testimonialRef} className="testimonial-container mt-16 flex flex-col items-center justify-center">
             <motion.h1
-                className="uppercase text-lg md:text-2xl border-b-2 mt-16 mb-3 w-full font-bold dark:font-medium"
+                className="uppercase text-lg md:text-2xl border-b-2 border-b-lime-700 mt-16 mb-3 font-bold"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                Words of Goodness
+                voices of gratitude
             </motion.h1>
 
             <Swiper
@@ -100,11 +100,11 @@ export default function Testimonials() {
                 mousewheel={{ forceToAxis: true, releaseOnEdges: false }}
                 pagination={{ clickable: false}}
                 modules={[Pagination, Mousewheel, Autoplay]}
-                className="mySwiper md:w-3/6 h-[25vh] md:h-[25vh] overflow-hidden"
+                className="mySwiper md:w-3/6 h-[20vh] md:h-[20vh] overflow-hidden"
                 onWheel={(e) => e.stopPropagation()} // Stops page scroll
             >
                 {testimonials.map((testimonial, index) => (
-                    <SwiperSlide key={testimonial.id} className="testimonial-slide p-6">
+                        <SwiperSlide key={testimonial.id} className="testimonial-slide p-6">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -112,12 +112,16 @@ export default function Testimonials() {
                             transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
                             className="text-center"
                         >
-                            <Heading color="gray" weight="medium" size="8">
-                                "{testimonial.text}"
-                            </Heading>
+                            <Text size="6">
+                                <Quote>
+                                    {testimonial.text}
+                                </Quote>
+                            </Text>
+
                             <Heading mt="3" color="lime" weight="bold" size="4">
                                 - {testimonial.author}
                             </Heading>
+
                         </motion.div>
 
                     </SwiperSlide>
