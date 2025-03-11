@@ -51,7 +51,7 @@ export default function Nav() {
 
                         {/* Navigation Links */}
                         <div className="flex flex-col items-center justify-center gap-8 uppercase">
-                            <Link href="/test" size="9" underline="none" color="gray" className="hover:text-black hover:border-b-2 hover:border-black dark:hover:text-white ">Shop</Link>
+                            <Link href="/shop" size="9" underline="none" color="gray" className="hover:text-black hover:border-b-2 hover:border-black dark:hover:text-white ">Shop</Link>
                             <Link href="#" size="9" underline="none" color="gray" className="hover:text-black dark:hover:text-white">About</Link>
                             <Link href="#" size="9" underline="none" color="gray" className="hover:text-black dark:hover:text-white">Contact</Link>
                             <Link href="#" size="9" underline="none" color="gray" className="hover:text-black dark:hover:text-white">Account</Link>
