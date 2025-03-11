@@ -5,6 +5,10 @@ import "@radix-ui/themes/styles.css";
 import {Theme} from "@radix-ui/themes";
 import { ThemeProvider } from 'next-themes'
 import ThemeToggle from "@/app/ThemeToggle";
+import Header from "@/app/Header";
+import Callout from "@/app/callout";
+import Nav from "@/app/Nav";
+import Footer from "@/app/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,12 +41,26 @@ export default function RootLayout({
             enableSystem
         >
           <Theme accentColor="lime" grayColor="olive" radius="full" scaling="90%">
+
+            <Header />
+
+            <div className="flex justify-center">
+              <Callout />
+            </div>
+
+            <Nav />
+
             {children}
-          <div className="absolute top-4 right-4">
-            <ThemeToggle />
-          </div>
+
+            <div className="absolute top-4 right-4">
+              <ThemeToggle />
+            </div>
           </Theme>
         </ThemeProvider>
+
+        <Footer />
+
+
 
       </body>
     </html>
