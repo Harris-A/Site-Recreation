@@ -6,10 +6,6 @@
   --background: #FFFFFF;
   --foreground: #171717;
 }
-/*:root[data-theme="dark"] {
-  --color-background: #121212 !important;
-  --color-text: #ffffff !important;
-}*/
 
 [data-theme='dark-theme'] {
   --background: #171717;
@@ -76,3 +72,99 @@ body {
     margin-top: 5rem !important;
   }
 }
+
+
+.dark .footer {
+  background-color: #111210;
+}
+
+/* ------------- Sitewide tooltip styling ---------- */
+.dark .tooltip-content {
+  color: var(--lime-7);
+}
+.tooltip-content {
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--lime-11);
+  background-color: white;
+  box-shadow:
+          hsl(206 22% 7% / 35%) 0 10px 38px -10px,
+          hsl(206 22% 7% / 20%) 0 10px 20px -15px;
+  user-select: none;
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.tooltip-content[data-state="delayed-open"][data-side="top"] {
+  animation-name: slideDownAndFade;
+}
+.tooltip-content[data-state="delayed-open"][data-side="right"] {
+  animation-name: slideLeftAndFade;
+}
+.tooltip-content[data-state="delayed-open"][data-side="bottom"] {
+  animation-name: slideUpAndFade;
+}
+.tooltip-content[data-state="delayed-open"][data-side="left"] {
+  animation-name: slideRightAndFade;
+}
+.tooltip-arrow {
+  fill: white;
+}
+
+.IconButton {
+  font-family: inherit;
+  border-radius: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lime-11) !important;
+  user-select: none;
+}
+
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- END ---------- */
