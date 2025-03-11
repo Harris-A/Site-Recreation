@@ -1,12 +1,9 @@
 // -- Site recreation - https://twogood.com.au/ --
-import Header from "./Header";
+
 import HeaderImage from "@/app/HeaderImage";
 import AdvertSection from "@/app/AdvertSection";
-import Footer from "@/app/Footer";
 import Testimonials from "@/app/Testimonials";
-import Callout from "@/app/callout";
 import Slider from "@/app/Slider";
-import Nav from "@/app/Nav";
 
 export default function Home() {
     return (
