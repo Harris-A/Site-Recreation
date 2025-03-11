@@ -12,15 +12,15 @@ const products = [
         bgColor: "bg-yellow-200",
     },
     {
-        src: "/2.png",
-        alt: "Alémais Collection",
-        label: "ALÉMAIS",
+        src: "/2-new.png",
+        alt: "Redefine the way book with apron",
+        label: "THE ALEMIAS COLLECTION",
         bgColor: "bg-blue-300",
     },
     {
-        src: "/3.png",
-        alt: "Soaps for Hope",
-        label: "SOAPS FOR HOPE",
+        src: "/3-new.png",
+        alt: "Cleanse and nourish handwash",
+        label: "BUBBLES OF CHANGE",
         bgColor: "bg-gray-200",
     },
 ];
