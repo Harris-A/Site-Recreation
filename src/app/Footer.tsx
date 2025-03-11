@@ -11,7 +11,7 @@ const Footer = () => {
                     <div className="footer-social">
                         <Heading size="2" weight="medium" color="gray" className="uppercase text-left">talk to us</Heading>
 
-                        <div className="social-icons flex gap-2 mt-2">
+                        <div className="social-icons flex gap-2 mt-2 hover:cursor-pointer">
                             <Tooltip.Provider>
                                 <Tooltip.Root>
                                     <Tooltip.Trigger asChild>

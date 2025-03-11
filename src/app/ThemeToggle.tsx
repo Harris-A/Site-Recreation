@@ -27,7 +27,7 @@ export default function ThemeToggle() {
             <Tooltip.Root>
                 <Tooltip.Trigger asChild>
                     <Button
-                        className="relative p-2 rounded-lg"
+                        className="relative p-2 rounded-lg hover:cursor-pointer"
                         onClick={toggleTheme}
                         variant="soft"
                     >
