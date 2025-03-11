@@ -3,7 +3,9 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { Button, Tooltip } from "@radix-ui/themes";
+import { Button } from "@radix-ui/themes";
+import * as Tooltip from "@radix-ui/react-tooltip";
+import {TooltipArrow, TooltipPortal} from "@radix-ui/react-tooltip";
 
 export default function ThemeToggle() {
     const [mounted, setMounted] = useState(false);
@@ -20,17 +22,30 @@ export default function ThemeToggle() {
     const toggleTheme = () => {
         setTheme(theme === "light" ? "dark" : "light");
     };
-
     return (
-        <Tooltip content="Toggle theme Dark/Light mode">
-            <Button
-                className="relative p-2 rounded-lg"
-                onClick={toggleTheme}
-                variant="soft"
-            >
-                <SunIcon className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            </Button>
-        </Tooltip>
+        <Tooltip.Provider>
+            <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                    <Button
+                        className="relative p-2 rounded-lg"
+                        onClick={toggleTheme}
+                        variant="soft"
+                    >
+                        {/* Show SunIcon if dark mode is active, otherwise show MoonIcon */}
+                        {theme === "light" ? (
+                            <MoonIcon className="h-6 w-6 transition-all" />
+                        ) : (
+                            <SunIcon className="h-6 w-6 transition-all" />
+                        )}
+                    </Button>
+                </Tooltip.Trigger>
+                <TooltipPortal>
+                    <Tooltip.Content className="tooltip-content">
+                        {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+                        <Tooltip.Arrow className="tooltip-arrow" />
+                    </Tooltip.Content>
+                </TooltipPortal>
+            </Tooltip.Root>
+        </Tooltip.Provider>
     );
 }
