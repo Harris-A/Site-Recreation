@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const products = [
     {
-        src: "/1.png",
+        src: "/1-new.png",
         alt: "Gifts for Good",
         label: "GIFTS FOR GOOD",
         bgColor: "bg-yellow-200",
