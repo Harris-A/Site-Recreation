@@ -45,7 +45,7 @@ export default function Slider () {
                     640: { slidesPerView: 2 }, // 1 slides on medium screens
                     1024: { slidesPerView: 3 } // 2 slides on large screens
                 }}
-                spaceBetween={350}
+                spaceBetween={30}
                 modules={[Autoplay]}
                 className="image-slider mt-16"
                 >
@@ -60,7 +60,7 @@ export default function Slider () {
                 </SwiperSlide>
 
                 <SwiperSlide className="swiper-slide">
-                    <Image src="/slider-img-2.png" alt="slider2" width="1000" height="1000" className="object-cover bg-white" />
+                    <Image src="/colour-apron.png" alt="slider2" width="1000" height="1000" className="object-cover bg-white" />
                     <div className="flex justify-center items-center gap-3">
                         <Text as="p" mt="3" size="5" weight="bold" color="gray">
                             £190.00
@@ -80,7 +80,7 @@ export default function Slider () {
                 </SwiperSlide>
 
                 <SwiperSlide className="swiper-slide">
-                    <Image src="/slider-img-4.png" alt="slider4" width="1000" height="1000" className="object-cover bg-white"/>
+                    <Image src="/scented-candle.png" alt="slider4" width="1000" height="1000" className="object-cover bg-white"/>
                     <div className="flex justify-center items-center gap-3">
                         <Text as="p" mt="3" size="5" weight="bold" color="gray">
                             £55.00
