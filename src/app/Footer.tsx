@@ -5,7 +5,7 @@ import {TooltipArrow, TooltipPortal} from "@radix-ui/react-tooltip";
 
 const Footer = () => {
     return (
-        <div className="footer border-t-2 border-gray-300 dark:border-white text-center w-full pt-8 pb-8 m-auto">
+        <div className="footer border-t-2 border-gray-300 dark:border-white text-center w-full pt-8 pb-8 px-16 m-auto">
             <Section size="1">
                 <Grid columns="3" gap="3" width="auto">
                     <div className="footer-social">
