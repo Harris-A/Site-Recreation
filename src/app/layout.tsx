@@ -9,6 +9,7 @@ import Header from "@/app/Header";
 import Callout from "@/app/callout";
 import Nav from "@/app/Nav";
 import Footer from "@/app/Footer";
+import { ReactLenis } from "@/app/utilities/Lenis";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,8 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body
+    <ReactLenis root>
+    <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
@@ -59,10 +61,8 @@ export default function RootLayout({
         </ThemeProvider>
 
         <Footer />
-
-
-
       </body>
+    </ReactLenis>
     </html>
   );
 }
