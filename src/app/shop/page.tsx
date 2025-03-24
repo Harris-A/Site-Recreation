@@ -1,17 +1,17 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ShopLatest from "@/app/ShopLatest";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import required Swiper modules
-import { Pagination, Navigation } from 'swiper/modules';
+import ShopLatest from "@/app/ShopLatest";  // Import Shop page components
+import ShopBanner from "@/app/ShopBanner";  // Import Shop page components
+import ShopProductGrid from "@/app/ShopProductGrid";    // Import Shop page components
+import { Swiper, SwiperSlide } from "swiper/react";     // Import required Swiper modules
+import { Pagination, Navigation } from 'swiper/modules';    // Import required Swiper modules
+import {Button, Heading, Text, Grid} from '@radix-ui/themes';  // Import Radix UI
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import {Heading} from "@radix-ui/themes";
 
 interface Product {
     id: string;
@@ -29,31 +29,33 @@ export default function Catalog() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await fetch('/api/products');
-                if (res.ok) {
-                    const data = await res.json();
-                    setProducts(data);
+                const res = await fetch('/api/products');   // Send a GET request to the '/api/products' endpoint
+
+                if (res.ok) {   // Check if the response status is OK (200-299)
+                    const data = await res.json();  // Parse the response JSON data
+
+                    setProducts(data);  // Update the state with the fetched products
                 } else {
-                    console.error('Failed to fetch products');
+                    console.error('Failed to fetch products');  // Log an error if the request was unsuccessful
                 }
             } catch (error) {
-                console.error('Error fetching products:', error);
+                console.error('Error fetching products:', error);   // Handle and log any network or unexpected errors
             } finally {
-                setLoading(false);
+                setLoading(false);  // Ensure that the loading state is set to false once the request completes
             }
         };
 
+        // Call the fetchProducts function immediately when the component mounts
         fetchProducts();
-    }, []);
+        }, []); // Empty dependency array ensures this runs only once on mount
 
+    // Display a loading message while products are being fetched
     if (loading) {
         return <div>Loading products...</div>;
     }
 
     return (
         <>
-            <h1 className="shop-heading px-16 uppercase text-[15rem] leading-none font-extrabold tracking-tighter">discover the best</h1>
-
             <ShopLatest />
 
             {/* Global Swiper for all products */}
@@ -73,36 +75,27 @@ export default function Catalog() {
             >
                 {products.map((product) => (
                     <SwiperSlide key={product.id}>
-                        <div className="rounded-lg shadow-lg p-12">
+                        <div className="p-12">
                             <img
                                 src={product.imageUrl}
                                 alt={product.name}
                                 className="mb-4 w-full h-auto object-cover rounded-xl"
                             />
-                            <h2 className="text-lg font-bold tracking-tight mt-4">{product.name}</h2>
+                            <Heading color="gray" size="4" className="uppercase text-center font-bold tracking-tight mt-4">{product.name}</Heading>
                             {/*<p className="text-gray-600">{product.description}</p>*/}
-                            <p className="text-lg mt-2 lg:mt-4">£{product.price}</p>
+                            <Text as="span" size="4" color="gray" className="flex justify-center tracking-tight">£{product.price}</Text>
                             {/*<p className="text-sm text-gray-500">Stock: {product.stock}</p>*/}
+                            <div className="buy-now-btn flex justify-center mt-6">
+                                <Button size="4" highContrast>Buy now</Button>
+                            </div>
                         </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
 
 
-            {products.map((product) => (
-                <div className="grid grid-cols-3 gap-3 px-16 mt-16" key={product.id}>
-                    <img
-                        src={product.imageUrl}
-                        alt={product.name}
-                        className="rounded-xl shadow-lg p-12"
-                    />
-                    <h2 className="text-lg font-bold tracking-tight mt-4">{product.name}</h2>
-                    <p className="text-lg mt-2 lg:mt-4">£{product.price}</p>
-                </div>
-            ))}
-
-
-
+            <ShopBanner />
+            <ShopProductGrid />
         </>
     );
 }
