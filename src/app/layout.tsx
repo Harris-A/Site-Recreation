@@ -4,11 +4,11 @@ import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import {Theme} from "@radix-ui/themes";
 import { ThemeProvider } from 'next-themes'
-import ThemeToggle from "@/app/ThemeToggle";
-import Header from "@/app/Header";
-import Callout from "@/app/callout";
-import Nav from "@/app/Nav";
-import Footer from "@/app/Footer";
+import ThemeToggle from "@/components/custom/ThemeToggle";
+import Header from "@/components/custom/Header";
+import Callout from "@/components/custom/callout";
+import Nav from "@/components/custom/Nav";
+import Footer from "@/components/custom/Footer";
 import { ReactLenis } from "@/app/utilities/Lenis";
 
 const geistSans = Geist({
