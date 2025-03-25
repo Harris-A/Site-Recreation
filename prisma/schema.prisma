@@ -23,3 +23,36 @@ model Products {
   createdAt   DateTime @default(now()) // Timestamp for creation
   updatedAt   DateTime @updatedAt // Auto-updated timestamp
 }
+
+model Category {
+  id          String   @id @default(uuid()) // Unique identifier for the category
+  name        String   @db.VarChar(255) // Category name (max 255 characters)
+  description String?  @db.Text // Optional description of the category
+  createdAt   DateTime @default(now()) // Timestamp when the category is created
+  updatedAt   DateTime @updatedAt // Timestamp automatically updated on category update
+}
+
+//Customer account table
+model User {
+  id            String    @id @default(cuid())
+  email         String?   @unique
+  password      String?
+  emailVerified DateTime?
+  firstname     String?
+  lastname      String?
+  username      String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+}
+
+//Customer session table
+model Session {
+  id        String   @id @default(uuid()) @db.VarChar(36)
+  userId    String?  @db.VarChar(36)
+  token     String   @unique @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  expiresAt DateTime
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
