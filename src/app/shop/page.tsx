@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ShopLatest from "@/app/ShopLatest";  // Import Shop page components
-import ShopBanner from "@/app/ShopBanner";  // Import Shop page components
-import ShopProductGrid from "@/app/ShopProductGrid";    // Import Shop page components
+import ShopLatest from "@/components/custom/ShopLatest";  // Import Shop page components
+import ShopBanner from "@/components/custom/ShopBanner";  // Import Shop page components
+import ShopProductGrid from "@/components/custom/ShopProductGrid";    // Import Shop page components
 import { Swiper, SwiperSlide } from "swiper/react";     // Import required Swiper modules
 import { Pagination, Navigation } from 'swiper/modules';    // Import required Swiper modules
 import {Button, Heading, Text, Grid} from '@radix-ui/themes';  // Import Radix UI
