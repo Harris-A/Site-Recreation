@@ -44,7 +44,7 @@ function Scroller() {
                 backgroundBlendMode: "overlay",
             }}
         >
-            <div className="px-4">
+            <div className="top-[50%] translate-y-[-50%] bg-black p-4">
                 {text.split(" ").map((word, index) => {
                     const textThreshold = (index + 1) / totalTextLength;
                     const opacity = progress >= textThreshold ? 1 : 0.2;

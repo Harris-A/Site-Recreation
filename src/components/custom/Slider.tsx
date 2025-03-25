@@ -11,7 +11,7 @@ import 'swiper'
 import '@radix-ui/colors';
 
 //import project globals css
-import './globals.css';
+import '../../app/globals.css';
 
 //import require swiper module
 import {Autoplay, EffectFade, Pagination} from "swiper/modules";
@@ -42,20 +42,22 @@ export default function Slider () {
                 freeMode={true}
                 pagination={true}
                 breakpoints={{
-                    640: { slidesPerView: 2 }, // 1 slides on medium screens
-                    1024: { slidesPerView: 3 } // 2 slides on large screens
+                    0: { slidesPerView: 1.5 },
+                    576: { slidesPerView: 1.5 },
+                    768: { slidesPerView: 3 }, // 2.5 slides on medium screens
+                    1024: { slidesPerView: 3 } // 3.5 slides on large screens
                 }}
                 spaceBetween={30}
                 modules={[Autoplay]}
                 className="image-slider mt-16"
                 >
-                <SwiperSlide className="swiper-slide">
+                <SwiperSlide className="swiper-slide pb-16">
                     <Image src="/slider-img-1.png" alt="slider1" width="1000" height="1000" className="object-cover bg-white"/>
                     <div className="flex justify-center items-center gap-3">
                         <Text as="p" mt="3" size="5" weight="bold" color="gray">
                             £50.00
                         </Text>
-                        <Button variant="solid" mt="3" size="4" highContrast>View Product</Button>
+                        <Button variant="solid" mt="3" size="4" highContrast>Buy Now</Button>
                     </div>
                 </SwiperSlide>
 
@@ -65,7 +67,7 @@ export default function Slider () {
                         <Text as="p" mt="3" size="5" weight="bold" color="gray">
                             £190.00
                         </Text>
-                        <Button variant="solid" mt="3" size="4" highContrast>View Product</Button>
+                        <Button variant="solid" mt="3" size="4" highContrast>Buy Now</Button>
                     </div>
                 </SwiperSlide>
 
@@ -75,7 +77,7 @@ export default function Slider () {
                             <Text as="p" mt="3" size="5" weight="bold" color="gray">
                                 £45.00
                             </Text>
-                            <Button variant="solid" mt="3" size="4" highContrast>View Product</Button>
+                            <Button variant="solid" mt="3" size="4" highContrast>Buy Now</Button>
                         </div>
                 </SwiperSlide>
 
@@ -85,7 +87,7 @@ export default function Slider () {
                         <Text as="p" mt="3" size="5" weight="bold" color="gray">
                             £55.00
                         </Text>
-                        <Button variant="solid" mt="3" size="4" highContrast>View Product</Button>
+                        <Button variant="solid" mt="3" size="4" highContrast>Buy Now</Button>
                     </div>
                 </SwiperSlide>
 

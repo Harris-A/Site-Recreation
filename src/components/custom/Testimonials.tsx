@@ -10,7 +10,7 @@ import {Heading, Quote, Text} from "@radix-ui/themes";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/mousewheel";
-import "./globals.css";
+import "../../app/globals.css";
 
 // Import required swiper modules
 import {Pagination, Mousewheel, Autoplay} from "swiper/modules";

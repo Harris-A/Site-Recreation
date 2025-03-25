@@ -3,7 +3,7 @@
 import { Cross as Hamburger } from 'hamburger-react'
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "@radix-ui/themes";
+import {Button, Link} from "@radix-ui/themes";
 
 export default function Nav() {
     const [isOpen, setOpen] = useState(false);
@@ -54,7 +54,10 @@ export default function Nav() {
                             <Link href="/shop" size="9" underline="none" color="gray" className="hover:text-black hover:border-b-2 hover:border-black dark:hover:text-white ">Shop</Link>
                             <Link href="#" size="9" underline="none" color="gray" className="hover:text-black dark:hover:text-white">About</Link>
                             <Link href="#" size="9" underline="none" color="gray" className="hover:text-black dark:hover:text-white">Contact</Link>
-                            <Link href="#" size="9" underline="none" color="gray" className="hover:text-black dark:hover:text-white">Account</Link>
+                            <div className="account-btns flex gap-3 mt-16">
+                                <Link href="/signin" size="9" underline="none" color="gray" className="hover:text-black dark:hover:text-white"><Button size="4" color="lime" highContrast>Sign In</Button></Link>
+                                <Link href="/signup" size="9" underline="none" color="gray" className="hover:text-black dark:hover:text-white"><Button size="4" color="lime" highContrast>Sign Up</Button></Link>
+                            </div>
                         </div>
                     </div>
                 </motion.div>
