@@ -1,6 +1,6 @@
 "use client";   // Required for using state in Next.js App Router
 
-import {Button, Heading, Text} from "@radix-ui/themes";
+import {Button, Heading, Text, Link} from "@radix-ui/themes";
 import {Label} from "radix-ui";
 import { useState } from "react";
 
@@ -47,12 +47,15 @@ export function SigninForm() {
     };
 
     return (
-        <div className="w-full max-w-md mx-auto p-6 border border-gray-200 rounded-lg shadow-lg">
+        <div className="w-full max-w-md mx-auto p-6 border bg-gray-50 dark:bg-black rounded-lg shadow-md mb-8">
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="mb-6">
                     <Heading color="lime" size="7" className="capitalize font-bold">sign in</Heading>
                     <Text as="p" color="gray">Enter your credentials to sign into your account</Text>
                 </div>
+
+                {/* Display messages */}
+                {message && <Text className="text-center mt-2 bg-lime-100 dark:bg-lime-800 p-3 rounded-lg">{message}</Text>}
 
                 {/* Email input field */}
                 <div className="space-y-2">
@@ -84,13 +87,14 @@ export function SigninForm() {
                     />
                 </div>
 
-                {/* Submit button */}
-                <Button color="lime" highContrast size="3" type="submit" className="w-full py-2 rounded-md">
-                    Sign In
-                </Button>
-
-                {/* Display messages */}
-                {message && <Text className="text-center mt-2">{message}</Text>}
+                <div className="flex items-center gap-3">
+                    {/* Submit button */}
+                    <Button color="lime" highContrast size="3" type="submit" className="w-full py-2 rounded-md">
+                        Sign In
+                    </Button>
+                    {/* Create account link */}
+                    <Link href="/signup">Don't have an account? Create one here</Link>
+                </div>
             </form>
         </div>
 

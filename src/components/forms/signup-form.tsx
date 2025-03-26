@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Label } from "radix-ui";
-import { Heading, Button, Text} from "@radix-ui/themes";
+import {Heading, Button, Text, Link} from "@radix-ui/themes";
 
 
 export function SignupForm() {
@@ -59,7 +59,7 @@ export function SignupForm() {
 
     // Display front-end sign up form
     return (
-        <div className="w-full max-w-md mx-auto p-6 border border-gray-200 rounded-lg shadow-lg">
+        <div className="w-full max-w-md mx-auto p-6 border border-gray-200 bg-gray-50 dark:bg-black rounded-lg shadow-md">
             <form onSubmit={handleSubmit}>
                 <div className="mb-6">
                     <Heading color="lime" size="7" className="capitalize font-bold">Create your account</Heading>
@@ -96,10 +96,12 @@ export function SignupForm() {
                     </div>
                 </div>
 
-                <div className="mt-4">
+                <div className="mt-4 flex items-center gap-3">
                     <Button color="lime" highContrast size="3" type="submit" className="w-full py-2 rounded-md" disabled={loading}>
                         {loading ? "Signing Up..." : "Sign Up"}
                     </Button>
+                    {/* Sign in link */}
+                    <Link href="/signin">Already have an account? Sign in here</Link>
                 </div>
             </form>
         </div>
