@@ -101,7 +101,12 @@ export function SignupForm() {
                         {loading ? "Signing Up..." : "Sign Up"}
                     </Button>
                     {/* Sign in link */}
-                    <Link href="/signin">Already have an account? Sign in here</Link>
+                    <div className="text-center text-sm">
+                        Already have an account?{" "}
+                        <Link href="/signin" className="underline">
+                            Sign In
+                        </Link>
+                    </div>
                 </div>
             </form>
         </div>
