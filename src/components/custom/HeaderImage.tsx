@@ -27,7 +27,7 @@ const HeaderImage = () => {
 
             <div className="w-full h-[80vh] md:bg-fixed bg-center bg-cover mt-10"
                 style={{
-                    backgroundImage: "url('/header-image.png')", // Replace with actual path
+                    backgroundImage: "url('/header-image.png')",
                 }}
             >
             </div>
