@@ -31,7 +31,7 @@ const Footer = () => {
                             <Tooltip.Provider>
                                 <Tooltip.Root>
                                     <Tooltip.Trigger asChild>
-                                        <IconButton className="IconButton">
+                                        <IconButton className="IconButton bg-white">
                                             <InstagramLogoIcon width="25" height="25"/>
                                         </IconButton>
                                     </Tooltip.Trigger>
