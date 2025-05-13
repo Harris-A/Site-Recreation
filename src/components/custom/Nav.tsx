@@ -21,7 +21,7 @@ export default function Nav() {
     }, [isOpen]);
 
     return (
-        <div className="absolute top-1.5 right-20">
+        <div className="absolute top-2 right-36">
             {/* Always Render the Hamburger Icon */}
             <Hamburger toggled={isOpen} toggle={setOpen} />
 
