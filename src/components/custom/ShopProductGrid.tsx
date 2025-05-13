@@ -50,7 +50,7 @@ export default function ShopProductGrid() {
                         <Heading color="gray" size="5" className="uppercase text-lg text-center font-extraboldbold tracking-tight mt-4">{product.name}</Heading>
                         <Text as="span" color="gray" size="4" className="flex justify-center tracking-tight">£{product.price}</Text>
                         <div className="buy-now-btn flex justify-center mt-6">
-                            <Button size="4" highContrast>Buy now</Button>
+                            <Button size="4" highContrast>Add to Basket</Button>
                         </div>
                     </div>
                 ))}

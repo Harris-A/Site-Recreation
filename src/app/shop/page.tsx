@@ -86,7 +86,7 @@ export default function Catalog() {
                             <Text as="span" size="4" color="gray" className="flex justify-center tracking-tight">£{product.price}</Text>
                             {/*<p className="text-sm text-gray-500">Stock: {product.stock}</p>*/}
                             <div className="buy-now-btn flex justify-center mt-6">
-                                <Button size="4" highContrast>Buy now</Button>
+                                <Button size="4" highContrast>Add to Basket</Button>
                             </div>
                         </div>
                     </SwiperSlide>
