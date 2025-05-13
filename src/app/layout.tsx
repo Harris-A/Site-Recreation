@@ -2,14 +2,17 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
-import {Theme} from "@radix-ui/themes";
-import { ThemeProvider } from 'next-themes'
+import { Theme } from "@radix-ui/themes";
+import { ThemeProvider } from "next-themes";
 import ThemeToggle from "@/components/custom/ThemeToggle";
 import Header from "@/components/custom/Header";
 import Callout from "@/components/custom/callout";
 import Nav from "@/components/custom/Nav";
 import Footer from "@/components/custom/Footer";
 import { ReactLenis } from "@/app/utilities/Lenis";
+
+import { CartProvider } from "@/components/cart/CartContext";
+import Cart from "@/components/cart/cart";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,42 +30,35 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+                                     children,
+                                   }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html suppressHydrationWarning lang="en">
-    <ReactLenis root>
-    <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-        >
+      <html suppressHydrationWarning lang="en">
+      <ReactLenis root>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Theme accentColor="lime" grayColor="olive" radius="full" scaling="90%">
+            <CartProvider> {/* Ensure everything needing cart context is inside */}
+              <Header />
 
-            <Header />
+              <div className="flex justify-center">
+                <Callout />
+              </div>
 
-            <div className="flex justify-center">
-              <Callout />
-            </div>
+              <Nav />
 
-            <Nav />
+              {children}
 
-            {children}
+              <div className="absolute top-4 right-4">
+                <ThemeToggle />
+              </div>
 
-            <div className="absolute top-4 right-4">
-              <ThemeToggle />
-            </div>
+              <Footer /> {/* Now inside CartProvider */}
+            </CartProvider>
           </Theme>
         </ThemeProvider>
-
-        <Footer />
-      </body>
-    </ReactLenis>
-    </html>
+        </body>
+      </ReactLenis>
+      </html>
   );
 }
