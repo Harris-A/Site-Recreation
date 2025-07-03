@@ -39,7 +39,7 @@ export default function ShopProductGrid() {
     }
 
         return (
-            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-10">
+            <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 mt-5">
                 {products.map((product) => (
                     <div className="p-12 rounded-xl" key={product.id}>
                         <img
@@ -47,10 +47,10 @@ export default function ShopProductGrid() {
                             alt={product.name}
                             className="rounded-xl"
                         />
-                        <Heading color="gray" size="5" className="uppercase text-lg text-center font-extraboldbold tracking-tight mt-4">{product.name}</Heading>
-                        <Text as="span" color="gray" size="4" className="flex justify-center tracking-tight">£{product.price}</Text>
+                        <Heading color="gray" size="4" className="text-md text-center font-medium tracking-tight mt-4">{product.name}</Heading>
+                        <Text as="span" color="gray" size="3" className="flex justify-center tracking-tight">£{product.price}</Text>
                         <div className="buy-now-btn flex justify-center mt-6">
-                            <Button size="4" highContrast>Add to Basket</Button>
+                            <Button size="3" highContrast>Shop now</Button>
                         </div>
                     </div>
                 ))}
