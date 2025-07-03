@@ -6,7 +6,7 @@ import ShopBanner from "@/components/custom/ShopBanner";  // Import Shop page co
 import ShopProductGrid from "@/components/custom/ShopProductGrid";    // Import Shop page components
 import { Swiper, SwiperSlide } from "swiper/react";     // Import required Swiper modules
 import { Pagination, Navigation } from 'swiper/modules';    // Import required Swiper modules
-import {Button, Heading, Text, Grid} from '@radix-ui/themes';  // Import Radix UI
+import {Button, Heading, Text} from '@radix-ui/themes';  // Import Radix UI
 
 // Import Swiper styles
 import 'swiper/css';
@@ -86,7 +86,7 @@ export default function Catalog() {
                             <Text as="span" size="4" color="gray" className="flex justify-center tracking-tight">£{product.price}</Text>
                             {/*<p className="text-sm text-gray-500">Stock: {product.stock}</p>*/}
                             <div className="buy-now-btn flex justify-center mt-6">
-                                <Button size="4" highContrast>Add to Basket</Button>
+                                <Button size="4" highContrast>Shop now</Button>
                             </div>
                         </div>
                     </SwiperSlide>
