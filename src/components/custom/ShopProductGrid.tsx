@@ -39,13 +39,13 @@ export default function ShopProductGrid() {
     }
 
         return (
-            <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 mt-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-5">
                 {products.map((product) => (
                     <div className="p-12 rounded-xl" key={product.id}>
                         <img
                             src={product.imageUrl}
                             alt={product.name}
-                            className="rounded-xl"
+                            className="rounded-xl dark:bg-white w-full h-auto object-cover"
                         />
                         <Heading color="gray" size="4" className="text-md text-center font-medium tracking-tight mt-4">{product.name}</Heading>
                         <Text as="span" color="gray" size="3" className="flex justify-center tracking-tight">£{product.price}</Text>
