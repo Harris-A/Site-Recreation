@@ -49,7 +49,7 @@ export function SigninForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="w-full max-w-md mx-auto p-8 border border-gray-300 bg-white dark:bg-gray-900 rounded-2xl shadow-lg"
+            className="w-full max-w-md mx-auto p-8 border border-gray-300 bg-white- dark:bg-gray-900 rounded-2xl shadow-lg"
         >
             <div className="space-y-3 text-center">
                 <Heading color="lime" size="8" className="capitalize font-extrabold tracking-wide">
@@ -123,15 +123,16 @@ export function SigninForm() {
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="mt-4"
                 >
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
+                    <Button
+                        color="lime"
+                        highContrast
+                        size="3"
+                        type="submit"
                         disabled={loading}
-                        className="w-full py-3 font-bold text-lg rounded-lg transition-all transform bg-lime-600 text-white hover:bg-lime-700 focus:ring-4 focus:ring-lime-400"
+                        className="w-full py-3 font-bold text-lg rounded-lg transition-all transform hover:scale-105 active:scale-95"
                     >
                         {loading ? "Signing in..." : "Sign In"}
-                    </motion.button>
+                    </Button>
                 </motion.div>
             </form>
 
