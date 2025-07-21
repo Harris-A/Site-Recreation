@@ -6,7 +6,7 @@ import Cart from "@/components/cart/cart";
 export default function Header() {
     return (
         <>
-            <header className="w-full px-4 py-3 flex items-center justify-between border-b">
+            <header className="w-full px-4 py-3 flex items-center justify-between">
                 <div>
                 {/* Animated Logo with link */}
                 <Link href="/">
