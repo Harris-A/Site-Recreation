@@ -40,7 +40,7 @@ const ProductDetail = () => {
         /*brand: "New Bold Inc.",
         category: "Clothing",*/
         sku: "HOO1234",
-        price: 45,
+        /*price: 45,*/
         /*previousPrice: 599,*/
         description:
             "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem exercitationem voluptate sint eius ea assumenda provident eos repellendus qui neque! Velit ratione illo maiores voluptates commodi eaque illum, laudantium non!",

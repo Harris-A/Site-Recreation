@@ -6,7 +6,7 @@ import ShopBanner from "@/components/custom/ShopBanner";  // Import Shop page co
 import ShopProductGrid from "@/components/custom/ShopProductGrid";    // Import Shop page components
 import { Swiper, SwiperSlide } from "swiper/react";     // Import required Swiper modules
 import { Pagination, Navigation } from 'swiper/modules';    // Import required Swiper modules
-import {Button, Heading, Text} from '@radix-ui/themes';  // Import Radix UI
+import {Button, Heading, Text, Link} from '@radix-ui/themes';  // Import Radix UI
 
 // Import Swiper styles
 import 'swiper/css';
@@ -79,9 +79,11 @@ export default function Catalog() {
                             <img
                                 src={product.imageUrl}
                                 alt={product.name}
-                                className="mb-4 w-full h-auto object-cover rounded-xl"
+                                className="mb-4 w-full h-auto object-cover dark:bg-white rounded-xl"
                             />
-                            <Heading color="gray" size="4" className="uppercase text-center font-bold tracking-tight mt-4">{product.name}</Heading>
+                            <Link href={`/shop/product/${product.name}`}>
+                                <Heading color="gray" size="4" className="uppercase text-center font-bold tracking-tight mt-4">{product.name}</Heading>
+                            </Link>
                             {/*<p className="text-gray-600">{product.description}</p>*/}
                             <Text as="span" size="4" color="gray" className="flex justify-center tracking-tight">£{product.price}</Text>
                             {/*<p className="text-sm text-gray-500">Stock: {product.stock}</p>*/}
